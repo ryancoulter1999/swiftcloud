@@ -140,7 +140,11 @@ app.get("/songs/search", (req, res) => {
   res.json(filteredSongs);
 });
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Start the server only if this file is run directly
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
+
+module.exports = app; // Export the app for testing
