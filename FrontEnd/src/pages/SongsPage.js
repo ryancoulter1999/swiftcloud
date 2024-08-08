@@ -21,6 +21,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import "../App.css";
 
 const SongsPage = () => {
+  // State variables for managing songs, search query, filters, and pagination
   const [songs, setSongs] = useState([]);
   const [allSongs, setAllSongs] = useState([]); // To keep the original list of songs
   const [query, setQuery] = useState("");
@@ -30,6 +31,7 @@ const SongsPage = () => {
   const [page, setPage] = useState(1);
   const songsPerPage = 20;
 
+  // Fetch songs with total plays when component mounts
   useEffect(() => {
     fetchSongsWithTotalPlays()
       .then((response) => {
@@ -48,6 +50,7 @@ const SongsPage = () => {
       });
   }, []);
 
+  // Handle search by query
   const handleSearch = () => {
     searchSongs(query)
       .then((response) => {
@@ -64,6 +67,7 @@ const SongsPage = () => {
       });
   };
 
+  // Handle filter by year
   const handleFilterByYear = () => {
     fetchSongsByYear(year)
       .then((response) => {
@@ -80,6 +84,7 @@ const SongsPage = () => {
       });
   };
 
+  // Handle filter by album
   const handleFilterByAlbum = () => {
     if (album) {
       const filteredSongs = allSongs.filter(
@@ -92,6 +97,7 @@ const SongsPage = () => {
     setPage(1); // Reset to the first page
   };
 
+  // Fetch popular songs from last month
   const handleFetchPopularLastMonth = () => {
     fetchPopularSongsLastMonth()
       .then((response) => {
@@ -108,6 +114,7 @@ const SongsPage = () => {
       });
   };
 
+  // Fetch popular songs of all time
   const handleFetchPopularAllTime = () => {
     fetchPopularSongsAllTime()
       .then((response) => {
@@ -124,27 +131,32 @@ const SongsPage = () => {
       });
   };
 
+  // Clear sorting and filters
   const clearSort = () => {
     setSongs(allSongs);
     setPage(1);
   };
 
+  // Handle page change for pagination
   const handlePageChange = (event, value) => {
     setPage(value);
   };
 
+  // Clear search input and results
   const clearSearch = () => {
     setQuery("");
     setSongs(allSongs);
     setPage(1);
   };
 
+  // Clear year filter and results
   const clearYearFilter = () => {
     setYear("");
     setSongs(allSongs);
     setPage(1);
   };
 
+  // Clear album filter and results
   const clearAlbumFilter = () => {
     setAlbum("");
     setSongs(allSongs);
@@ -163,6 +175,7 @@ const SongsPage = () => {
     <Container>
       <h1>All Songs</h1>
       <div className="filter-container">
+        {/* Search by song name */}
         <TextField
           label="Search by Name"
           variant="outlined"
@@ -187,6 +200,7 @@ const SongsPage = () => {
         </IconButton>
       </div>
       <div className="filter-container">
+        {/* Filter by year */}
         <TextField
           label="Filter by Year"
           variant="outlined"
@@ -211,6 +225,7 @@ const SongsPage = () => {
         </IconButton>
       </div>
       <div className="filter-container">
+        {/* Filter by album */}
         <TextField
           select
           label="Filter by Album"
@@ -242,6 +257,7 @@ const SongsPage = () => {
         </IconButton>
       </div>
       <div className="filter-container">
+        {/* Fetch popular songs */}
         <Button
           variant="contained"
           className="filter-button"

@@ -17,7 +17,6 @@ function App() {
           <Route path="/" exact element={<LandingPage />} />
           <Route path="/songs" exact element={<SongsPage />} />
           <Route path="/songs/:id" element={<SongDetailPage />} />{" "}
-          {/* Add route for song details */}
           <Route path="/popular" element={<PopularSongsPage />} />
           <Route path="/contact" element={<ContactUsPage />} />
         </Routes>
