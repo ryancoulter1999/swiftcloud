@@ -2,6 +2,18 @@
 
 SwiftCloud is a web application that provides an API to serve information about songs and their play counts over different months. The frontend consumes this API to display the song data and allows users to search, filter, and sort songs.
 
+## Running Unit Tests
+
+1. Install Jest and Supertest:
+   Make sure you have jest and supertest installed as development dependencies in your project: npm install --save-dev jest supertest
+
+2. Add a Test Script to package.json:
+   Add a script to your package.json to run the tests using Jest. Open your package.json and add the following under the scripts section:
+
+"scripts": {
+"test": "jest"
+}
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (version 14.x or higher)
