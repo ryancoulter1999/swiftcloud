@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Card, CardContent, Typography } from "@mui/material";
-import "../App.css"; // Ensure this path is correct
+import "../App.css";
 
 const SongCard = ({ song }) => {
   const navigate = useNavigate();

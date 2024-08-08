@@ -5,7 +5,7 @@ import LandingPage from "./pages/LandingPage";
 import SongsPage from "./pages/SongsPage";
 import PopularSongsPage from "./pages/PopularSongsPage";
 import ContactUsPage from "./pages/ContactUsPage";
-import SongDetailPage from "./pages/SongDetailPage"; // Import the new component
+import SongDetailPage from "./pages/SongDetailPage";
 import "./App.css";
 
 function App() {
