@@ -54,7 +54,7 @@ SwiftCloud is a web application that provides an API to serve information about 
 
    ```bash
    cd path/to/SwiftCloud
-   node index.js
+   node server.js
    ```
 
    The backend server will run on `http://localhost:3000`.
